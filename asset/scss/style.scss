@@ -38,10 +38,12 @@ html {
     width: 20%;
     padding-top: 20%;
     overflow: hidden;
-    border-radius: 50%;
+    // border-radius: 50%;
     background: url("../image/avatar.JPG") top center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
   }
   .content__info {
     padding-left: 2rem;
@@ -64,8 +66,9 @@ html {
         background: #1ed760;
         padding: 0.5rem 1rem;
         height: 2.4rem;
-        border-radius: 1.2rem;
         margin-right: 1rem;
+        border-bottom-left-radius: 2rem;
+        border-top-right-radius: 2rem;
         a {
           display: block;
           width: 100%;
@@ -92,20 +95,32 @@ html {
   }
   .content__block {
     letter-spacing: 1px;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     .block__title {
       h2 {
         font-size: 2rem;
         font-weight: 300;
         text-transform: uppercase;
-        border-bottom: 4px solid #1ed760;
+        // border-bottom: 4px solid #1ed760;
         display: inline-block;
+        position: relative;
+        &::after {
+          content: "";
+          height: 5px;
+          width: 100%;
+          background: #1ed760;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          border-bottom-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
       }
     }
     .block__item {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       .title {
-        margin-bottom: 2px;
+        // margin-bottom: 2px;
         font-size: 1.4rem;
         .name {
           font-weight: 700;
@@ -129,7 +144,7 @@ html {
       }
       .detail {
         font-size: 1.2rem;
-        margin-top: 0.5rem;
+        margin-top: 5px;
         font-weight: 300;
         a {
           text-decoration: none;
@@ -140,6 +155,15 @@ html {
           &:hover {
             opacity: 0.8;
             color: #1ed760;
+          }
+        }
+        p {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2px;
+          ion-icon {
+            margin-right: 3px;
+            font-size: 1.8rem;
           }
         }
       }
